@@ -1,10 +1,7 @@
 package com.hencoder.hencoderpracticedraw2.practice
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.graphics.Paint
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import com.hencoder.hencoderpracticedraw2.R
@@ -26,5 +23,9 @@ class Practice07ColorMatrixColorFilterView : View {
         bitmap = BitmapFactory.decodeResource(resources, R.drawable.batman)
         // 使用 setColorFilter() 设置一个 ColorMatrixColorFilter
         // 用 ColorMatrixColorFilter.setSaturation() 把饱和度去掉
+        val colorMatrix = ColorMatrix()
+        colorMatrix.setSaturation(0f)
+        val filter = ColorMatrixColorFilter(colorMatrix)
+        paint.colorFilter = filter
     }
 }

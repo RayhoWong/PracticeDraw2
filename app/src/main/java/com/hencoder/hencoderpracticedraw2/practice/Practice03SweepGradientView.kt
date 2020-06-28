@@ -2,7 +2,9 @@ package com.hencoder.hencoderpracticedraw2.practice
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.SweepGradient
 import android.util.AttributeSet
 import android.view.View
 
@@ -16,5 +18,11 @@ class Practice03SweepGradientView : View {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.drawCircle(300f, 300f, 200f, paint)
+    }
+
+    init {
+        //扫描渐变
+        paint.shader = SweepGradient(300f,300f, Color.parseColor("#E91E63"),
+                Color.parseColor("#2196F3"))
     }
 }

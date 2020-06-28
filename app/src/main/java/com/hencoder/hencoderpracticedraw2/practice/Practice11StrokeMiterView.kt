@@ -20,12 +20,15 @@ class Practice11StrokeMiterView : View {
         canvas.save()
         canvas.translate(100f, 100f)
         // MITER 值：1
+        paint.strokeMiter = 1f
         canvas.drawPath(path, paint)
         canvas.translate(300f, 0f)
         // MITER 值：2
+        paint.strokeMiter = 2f
         canvas.drawPath(path, paint)
         canvas.translate(300f, 0f)
         // MITER 值：5
+        paint.strokeMiter = 5f
         canvas.drawPath(path, paint)
         canvas.restore()
     }

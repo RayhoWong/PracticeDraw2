@@ -1,10 +1,10 @@
 package com.hencoder.hencoderpracticedraw2.practice
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Paint
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import com.hencoder.hencoderpracticedraw2.R
 
 class Practice05ComposeShaderView : View {
     var paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -23,5 +23,12 @@ class Practice05ComposeShaderView : View {
         // 用 Paint.setShader(shader) 设置一个 ComposeShader
         // Shader 1: BitmapShader 图片：R.drawable.batman
         // Shader 2: BitmapShader 图片：R.drawable.batman_logo
+        val bitmap1 = BitmapFactory.decodeResource(resources, R.drawable.batman)
+        val shader1 = BitmapShader(bitmap1,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
+        val bitmap2 = BitmapFactory.decodeResource(resources, R.drawable.batman_logo)
+        val shader2 = BitmapShader(bitmap2,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
+
+        paint.shader = ComposeShader(shader1,shader2,PorterDuff.Mode.DST_IN)
+
     }
 }

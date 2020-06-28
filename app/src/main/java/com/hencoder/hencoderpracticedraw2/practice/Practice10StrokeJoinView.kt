@@ -21,12 +21,15 @@ class Practice10StrokeJoinView : View {
         // 使用 Paint.setStrokeJoin() 来设置不同的拐角形状
         canvas.translate(100f, 100f)
         // 第一种形状：MITER
+        paint.strokeJoin = Paint.Join.MITER
         canvas.drawPath(path, paint)
         canvas.translate(300f, 0f)
         // 第二种形状：BEVEL
+        paint.strokeJoin = Paint.Join.BEVEL
         canvas.drawPath(path, paint)
         canvas.translate(300f, 0f)
         // 第三种形状：ROUND
+        paint.strokeJoin = Paint.Join.ROUND
         canvas.drawPath(path, paint)
         canvas.restore()
     }

@@ -25,6 +25,7 @@ class Practice15FillPathView : View {
         paint.style = Paint.Style.FILL_AND_STROKE
         paint.strokeWidth = 0f
         // 第一处：获取 Path
+        paint.getFillPath(path,path1)
         canvas.drawPath(path, paint)
         canvas.save()
         canvas.translate(500f, 0f)
@@ -33,7 +34,9 @@ class Practice15FillPathView : View {
         canvas.save()
         canvas.translate(0f, 200f)
         paint.style = Paint.Style.STROKE
+
         // 第二处：设置 Style 为 STROKE 后再获取 Path
+        paint.getFillPath(path,path2)
         canvas.drawPath(path, paint)
         canvas.restore()
         canvas.save()
@@ -43,7 +46,9 @@ class Practice15FillPathView : View {
         canvas.save()
         canvas.translate(0f, 400f)
         paint.strokeWidth = 40f
+
         // 第三处：Style 为 STROKE 并且线条宽度为 40 时的 Path
+        paint.getFillPath(path,path3)
         canvas.drawPath(path, paint)
         canvas.restore()
         canvas.save()

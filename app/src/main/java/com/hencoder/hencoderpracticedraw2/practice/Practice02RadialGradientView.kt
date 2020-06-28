@@ -1,8 +1,7 @@
 package com.hencoder.hencoderpracticedraw2.practice
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Paint
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 
@@ -17,4 +16,12 @@ class Practice02RadialGradientView : View {
         super.onDraw(canvas)
         canvas.drawCircle(300f, 300f, 200f, paint)
     }
+
+    init {
+        //中心向周围辐射状渐变
+        paint.shader = RadialGradient(300f,300f,200f, Color.parseColor("#E91E63"),
+                Color.parseColor("#2196F3"), Shader.TileMode.CLAMP)
+    }
+
+
 }
